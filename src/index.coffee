@@ -8,8 +8,9 @@ module.exports = class ES6ModuleTranspiler
   constructor: (config) ->
     if config.es6ModuleTranspiler
       @debug = config.es6ModuleTranspiler.debug or no
-      @match = new RegExp config.es6ModuleTranspiler.match
+      @match = new RegExp(config.es6ModuleTranspiler.match or /^app/)
     else
+      @debug = no
       @match = new RegExp /^app/
 
     console.log '---> es6-matching:', @match if @debug
