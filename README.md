@@ -1,9 +1,18 @@
 # es6-module-transpiler-brunch
 
 
-Brunch plugin for the [es6-module-transpiler](https://github.com/square/es6-module-transpiler).
+Adds ES6 module syntax to [Brunch](http://brunch.io) based on Square's [es6-module-transpiler](https://github.com/square/es6-module-transpiler).
 
 **ES6 Module Transpiler** is an experimental compiler that allows you to write your JavaScript using a subset of the current ES6 module syntax, and compile it into AMD or CommonJS modules.
+
+## Usage
+Install the plugin via npm with `npm install --save es6-module-transpiler-brunch`.
+
+Or, do manual install:
+
+* Add `"es6-module-transpiler-brunch": "x.y.z"` to `package.json` of your brunch app.
+* If you want to use git version of plugin, add
+`"css-brunch": "git+ssh://git@github.com:gcollazo/es6-module-transpiler-brunch.git"`.
 
 ## Supported ES6 Module Syntax
 
@@ -96,7 +105,7 @@ import "alerter";  // will pop up alert box
 ```
 
 ## How the plugin works
-This [Brunch](http://brunch.io) plugin will take all files under the `app` directory and pass them through the `es6-module-transpiler`. The modules are being compiled to CommonJS modules.
+The plugin will take all files ending in `*.js` under the `app` directory and pass them through the `es6-module-transpiler` and compiled as CommonJS modules.
 
 ## Plugin Config
 The plugin has two configuration options you can add to your project's `config.coffee`: `match` which is a regex used to decide what files to compile and `debug` which will `console.log` debugging info when the plugin runs.
