@@ -12,7 +12,7 @@ Or, do manual install:
 
 * Add `"es6-module-transpiler-brunch": "x.y.z"` to `package.json` of your brunch app.
 * If you want to use git version of plugin, add
-`"css-brunch": "git+ssh://git@github.com:gcollazo/es6-module-transpiler-brunch.git"`.
+`"es6-module-transpiler-brunch": "git+ssh://git@github.com:gcollazo/es6-module-transpiler-brunch.git"`.
 
 ## Supported ES6 Module Syntax
 
