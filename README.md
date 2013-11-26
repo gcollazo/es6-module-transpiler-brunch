@@ -108,11 +108,18 @@ import "alerter";  // will pop up alert box
 The plugin will take all files ending in `*.js` under the `app` directory and pass them through the `es6-module-transpiler` and compiled as CommonJS modules.
 
 ## Plugin Config
-The plugin has two configuration options you can add to your project's `config.coffee`: `match` which is a regex used to decide what files to compile and `debug` which will `console.log` debugging info when the plugin runs.
+The plugin has three configuration options you can add to your project's `config.coffee`:
+
+`match` which is a regex used to decide what files to compile.
+`type` which is the type of module the transpiler should compile.
+`debug` which will `console.log` debugging info when the plugin runs.
 
 ```javascript
-exports.config = 
+exports.config =
   es6ModuleTranspiler:
     match: /^app/
+    type: 'commonjs' // other options: 'amd', 'globals'
     debug: yes
 ```
+
+If compiling to AMD modules, you will need to include a module loader such as [almond](https://github.com/jrburke/almond) or [RequireJS](http://requirejs.org).
